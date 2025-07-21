@@ -1,0 +1,152 @@
+/* File: resources/public/style.css */
+
+/* --- Global Styles & Layout --- */
+body {
+    /* Use a modern, system-native font stack for a clean look */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    /* A light, neutral background color */
+    background-color: #f0f2f5;
+    color: #1c1e21; /* A dark gray for text, softer than pure black */
+
+    /* Flexbox properties to center the main container perfectly on the page */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;   /* Center vertically */
+    min-height: 100vh;     /* Ensure the body takes up at least the full viewport height */
+
+    margin: 0; /* Remove default body margin */
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding doesn't add to the total width/height */
+}
+
+/* The main white card that holds all content */
+.container {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px; /* Soft rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow to lift the card off the page */
+    width: 100%;
+    max-width: 600px; /* Prevents the card from becoming too wide on large screens */
+    text-align: center;
+}
+
+/* --- Header and Text Styling --- */
+header h1 {
+    color: #1c1e21;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #606770; /* A lighter gray for secondary text */
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+/* --- Input Elements --- */
+textarea#text-input {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit; /* Use the same font as the rest of the page */
+    resize: vertical; /* Allow user to resize the textarea height, but not width */
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+button#analyze-btn {
+    background-color: #1877f2; /* A modern blue color */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer; /* Change mouse cursor to a pointer on hover */
+    transition: background-color 0.2s ease; /* Smooth color change on hover */
+    width: 100%;
+}
+
+/* Style for when the mouse is hovering over the button */
+button#analyze-btn:hover {
+    background-color: #166fe5; /* A slightly darker blue */
+}
+
+/* Style for when the button is disabled by JavaScript (during loading) */
+button#analyze-btn:disabled {
+    background-color: #a0bdf1;
+    cursor: not-allowed; /* Show a "not allowed" cursor */
+}
+
+/* --- Dynamic Elements (Spinner and Results) --- */
+
+/* The loading spinner */
+.spinner {
+    border: 4px solid #f3f3f3; /* Light grey track */
+    border-top: 4px solid #1877f2; /* Blue spinning part */
+    border-radius: 50%; /* Makes it a circle */
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite; /* Apply the spin animation */
+    margin: 20px auto; /* Center the spinner */
+}
+
+/* The keyframe animation that creates the spinning effect */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Container for the final result */
+#results-section {
+    margin-top: 25px;
+    /* Apply a subtle fade-in effect when results are shown */
+    animation: fadeIn 0.5s ease;
+}
+
+/* The keyframe animation for the fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* The colored "pill" that displays the sentiment */
+.sentiment-badge {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 50px; /* Makes it a pill shape */
+    display: inline-block;
+}
+
+/* --- Conditional Styling for Sentiment --- */
+/* These classes will be added by JavaScript based on the result */
+
+.sentiment-badge.Positive {
+    background-color: #e4f7e4; /* Light green */
+    color: #2b7a2b; /* Dark green text */
+}
+
+.sentiment-badge.Negative {
+    background-color: #fde4e4; /* Light red */
+    color: #d92d20; /* Dark red text */
+}
+
+.sentiment-badge.Neutral {
+    background-color: #f0f0f0; /* Light gray */
+    color: #505050; /* Dark gray text */
+}
+
+/* --- Error Message Styling --- */
+.error-box {
+    background-color: #fde4e4;
+    border: 1px solid #d92d20;
+    color: #d92d20;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: left;
+}
