@@ -1,33 +1,31 @@
-/* File: resources/public/style.css */
 
-/* --- Global Styles & Layout --- */
 body {
-    /* Use a modern, system-native font stack for a clean look */
+    
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
-    /* A light, neutral background color */
+    
     background-color: #f0f2f5;
-    color: #1c1e21; /* A dark gray for text, softer than pure black */
+    color: #1c1e21; 
 
-    /* Flexbox properties to center the main container perfectly on the page */
+    
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;   /* Center vertically */
-    min-height: 100vh;     /* Ensure the body takes up at least the full viewport height */
+    justify-content: center; 
+    align-items: center;   
+    min-height: 100vh;     
 
-    margin: 0; /* Remove default body margin */
+    margin: 0; 
     padding: 20px;
-    box-sizing: border-box; /* Ensures padding doesn't add to the total width/height */
+    box-sizing: border-box; 
 }
 
-/* The main white card that holds all content */
+
 .container {
     background-color: #ffffff;
     padding: 20px 30px;
-    border-radius: 8px; /* Soft rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow to lift the card off the page */
+    border-radius: 8px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
     width: 100%;
-    max-width: 600px; /* Prevents the card from becoming too wide on large screens */
+    max-width: 600px; 
     text-align: center;
 }
 
@@ -38,7 +36,7 @@ header h1 {
 }
 
 header p {
-    color: #606770; /* A lighter gray for secondary text */
+    color: #606770;
     margin-bottom: 25px;
     font-size: 16px;
 }
@@ -51,22 +49,22 @@ textarea#text-input {
     border: 1px solid #dddfe2;
     border-radius: 6px;
     font-size: 16px;
-    font-family: inherit; /* Use the same font as the rest of the page */
-    resize: vertical; /* Allow user to resize the textarea height, but not width */
+    font-family: inherit; 
+    resize: vertical; 
     box-sizing: border-box;
     margin-bottom: 15px;
 }
 
 button#analyze-btn {
-    background-color: #1877f2; /* A modern blue color */
+    background-color: #1877f2; 
     color: white;
     border: none;
     padding: 12px 20px;
     border-radius: 6px;
     font-size: 17px;
     font-weight: bold;
-    cursor: pointer; /* Change mouse cursor to a pointer on hover */
-    transition: background-color 0.2s ease; /* Smooth color change on hover */
+    cursor: pointer; 
+    transition: background-color 0.2s ease; 
     width: 100%;
 }
 
@@ -85,13 +83,13 @@ button#analyze-btn:disabled {
 
 /* The loading spinner */
 .spinner {
-    border: 4px solid #f3f3f3; /* Light grey track */
-    border-top: 4px solid #1877f2; /* Blue spinning part */
-    border-radius: 50%; /* Makes it a circle */
+    border: 4px solid #f3f3f3; 
+    border-top: 4px solid #1877f2; 
+    border-radius: 50%; 
     width: 30px;
     height: 30px;
-    animation: spin 1s linear infinite; /* Apply the spin animation */
-    margin: 20px auto; /* Center the spinner */
+    animation: spin 1s linear infinite; 
+    margin: 20px auto; 
 }
 
 /* The keyframe animation that creates the spinning effect */
@@ -103,22 +101,22 @@ button#analyze-btn:disabled {
 /* Container for the final result */
 #results-section {
     margin-top: 25px;
-    /* Apply a subtle fade-in effect when results are shown */
+    
     animation: fadeIn 0.5s ease;
 }
 
-/* The keyframe animation for the fade-in effect */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* The colored "pill" that displays the sentiment */
+
 .sentiment-badge {
     font-size: 20px;
     font-weight: bold;
     padding: 10px 20px;
-    border-radius: 50px; /* Makes it a pill shape */
+    border-radius: 50px; 
     display: inline-block;
 }
 
@@ -126,18 +124,18 @@ button#analyze-btn:disabled {
 /* These classes will be added by JavaScript based on the result */
 
 .sentiment-badge.Positive {
-    background-color: #e4f7e4; /* Light green */
-    color: #2b7a2b; /* Dark green text */
+    background-color: #e4f7e4; 
+    color: #2b7a2b; 
 }
 
 .sentiment-badge.Negative {
-    background-color: #fde4e4; /* Light red */
-    color: #d92d20; /* Dark red text */
+    background-color: #fde4e4; 
+    color: #d92d20;
 }
 
 .sentiment-badge.Neutral {
-    background-color: #f0f0f0; /* Light gray */
-    color: #505050; /* Dark gray text */
+    background-color: #f0f0f0; 
+    color: #505050; 
 }
 
 /* --- Error Message Styling --- */
